@@ -1,15 +1,16 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("C:\\Developer\\Projects\\java\\files\\text.txt");
-        try (Scanner sc = new Scanner(file)) {
-            while (sc.hasNextLine()) {
-                System.out.printf(sc.nextLine());
+        String path = "files\\text.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line = br.readLine();
+            while(line != null){
+                System.out.println(line);
+                line = br.readLine();
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
