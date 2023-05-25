@@ -38,8 +38,7 @@ public class ManipulatingFiles {
     public static void sort(List<Product> items) {
         Comparator<Product> comparator = Comparator.comparing(Product::getPrice);
         items.sort(comparator.reversed());
-        for (
-                Product product : items) {
+        for (Product product : items) {
             System.out.println("Item: " + product.getName());
             System.out.println("Price: " + product.getPrice());
         }
