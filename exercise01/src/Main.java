@@ -12,6 +12,6 @@ public class Main {
         System.out.println("Map of items: " + items);
         var avg = ManipulatingFiles.avgPrice(items);
         System.out.println("Average price: " + avg);
-        ManipulatingFiles.sort(items);
+        ManipulatingFiles.sort(items, avg);
     }
 }
